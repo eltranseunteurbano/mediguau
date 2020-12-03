@@ -4,10 +4,12 @@ import { Box, Tabs, Tab, Typography } from '@material-ui/core';
 
 import InputAvatarList from './InputAvatarList';
 
+import { useTypeOfData } from '../hooks';
+
 const SelectInformationComponent = () => {
 	const classes = useStyles();
 
-	const [tabValue, setTabValue] = useState(null);
+	const { isFriendSelected, setIsFriendSelected } = useTypeOfData();
 
 	return (
 		<Box component='main' className={classes.root}>
@@ -26,17 +28,17 @@ const SelectInformationComponent = () => {
 					¿Que estás buscando?
 				</Typography>
 				<Tabs
-					value={tabValue}
+					value={isFriendSelected}
 					centered
 					textColor='primary'
 					indicatorColor='primary'
 					className={classes.tabButtonsGroup}
-					onChange={(e, value) => setTabValue(value)}
+					onChange={(e, value) => setIsFriendSelected(value)}
 				>
 					<Tab label='Nuevo amigo' className={classes.tabButton} />
 					<Tab label='Nuevo dueño' className={classes.tabButton} />
 				</Tabs>
-				<InputAvatarList open={tabValue !== null} />
+				<InputAvatarList open={isFriendSelected !== null} />
 			</Box>
 		</Box>
 	);

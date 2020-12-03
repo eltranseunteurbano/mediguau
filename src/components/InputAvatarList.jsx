@@ -9,8 +9,7 @@ const InputAvatarList = ({ open }) => {
 	return (
 		<Collapse
 			in={open}
-			style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-			classes={{ wrapper: classes.wrapper }}
+			classes={{ wrapper: classes.wrapper, container: classes.wrapper }}
 		>
 			<Box className={classes.root}>
 				<Avatar
