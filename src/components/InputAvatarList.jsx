@@ -26,7 +26,7 @@ const InputAvatarList = ({ open }) => {
 				<Avatar
 					className={classes.avatar}
 					alt='Avatar'
-					src={isFriendSearching === 0 ? `${process.env.PUBLIC_URL}/perros/${userSelected[0]}.png`: isFriendSearching === 1 ? `${process.env.PUBLIC_URL}/personas/${userSelected[0]}.jpg` : ''}
+					src={isFriendSearching === 0 ? `${process.env.PUBLIC_URL}/perros/${userSelected[0]}.jpg`: isFriendSearching === 1 ? `${process.env.PUBLIC_URL}/personas/${userSelected[0]}.jpg` : ''}
 				/>
 					: 
 					<Avatar
