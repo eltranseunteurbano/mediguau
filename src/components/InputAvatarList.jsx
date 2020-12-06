@@ -20,17 +20,25 @@ const InputAvatarList = ({ open }) => {
 			classes={{ wrapper: classes.wrapper, container: classes.wrapper }}
 		>
 			<Box className={classes.root}>
+				{
+					userSelected
+					?
 				<Avatar
 					className={classes.avatar}
 					alt='Avatar'
+					src={isFriendSearching === 0 ? `${process.env.PUBLIC_URL}/perros/${userSelected[0]}.png`: isFriendSearching === 1 ? `${process.env.PUBLIC_URL}/personas/${userSelected[0]}.jpg` : ''}
+				/>
+					: 
+					<Avatar
 					classes={{ colorDefault: classes.avatarBackground }}
-				>
-					{isFriendSearching === 0 ?
+					>
+						{isFriendSearching === 0 ?
 						<Pets />
 						:
 						<Person />
 					}
 					</Avatar>
+}
 				<Autocomplete
 					fullWidth
 					options={isFriendSearching === 0 ? perrosData : personasData}
