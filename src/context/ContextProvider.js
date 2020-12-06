@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import { rootReducer, states } from './RootReducer';
+import LoadScreen from '../container/LoadScreen';
 
 const context = createContext();
 
@@ -8,7 +9,7 @@ const ContextProvider = ({ children }) => {
 
   return (
     <context.Provider value={{ state, dispatch }}>
-      {children}
+      <LoadScreen>{children}</LoadScreen>
     </context.Provider>
   );
 };

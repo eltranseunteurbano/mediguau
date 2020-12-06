@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Hidden, IconButton, Typography } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
+import { readRemoteFile } from 'react-papaparse'
+import { useMain } from '../hooks';
+
 const Header = () => {
 	const classes = useStyles();
+	const { loadDataCSV } = useMain();
+
+	useEffect( () => {
+		readRemoteFile(process.env.PUBLIC_URL + '/data/patalogias.csv', {
+			complete: (results, file) => {
+				loadDataCSV('patologias', results.data)
+			}
+		})
+		readRemoteFile(process.env.PUBLIC_URL + '/data/perros.csv', {
+			complete: (results, file) => {
+				loadDataCSV('perros', results.data)
+			}
+		})
+		readRemoteFile(process.env.PUBLIC_URL + '/data/personas.csv', {
+			complete: (results, file) => {
+				loadDataCSV('personas', results.data)
+			}
+		})
+	}, [])
 
 	return (
 		<header className={classes.root}>

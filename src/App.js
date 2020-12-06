@@ -8,7 +8,8 @@ import Presentation from './container/Presentation';
 import NewFriend from './container/NewFriend';
 import Error from './container/Error';
 
-function App() {
+const App = () => {
+
 	return (
 		<BrowserRouter>
 			<ContextProvider>

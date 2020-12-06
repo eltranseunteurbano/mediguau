@@ -51,11 +51,12 @@ const useStyles = makeStyles((theme) =>
 			flexDirection: 'column',
 			justifyContent: 'space-evenly',
 			alignItems: 'center',
-			minHeight: 'calc(100vh - 80px)',
+			minHeight: 'calc(100vh - 80px - 80px)',
 			overflow: 'hidden',
 			width: '100%',
 			[theme.breakpoints.up('md')]: {
 				flexDirection: 'row-reverse',
+				minHeight: 'calc(100vh - 80px - 200px)',
 			},
 		},
 		img: {

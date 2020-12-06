@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Box, Collapse, Grow, Avatar, TextField, Button } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
@@ -8,8 +8,11 @@ import { useMain } from '../hooks';
 
 const InputAvatarList = ({ open }) => {
 	const classes = useStyles();
-	const { isFriendSearching, userSelected, setUserSelected } = useMain();
+	const { isFriendSearching, userSelected, setUserSelected, personasData, perrosData } = useMain();
 
+	useEffect( () => {
+		setUserSelected(null)
+	}, [isFriendSearching])
 
 	return (
 		<Collapse
@@ -30,9 +33,11 @@ const InputAvatarList = ({ open }) => {
 					</Avatar>
 				<Autocomplete
 					fullWidth
-					options={top100Films}
-					getOptionLabel={(option) => option.title}
+					options={isFriendSearching === 0 ? perrosData : personasData}
+					getOptionLabel={(option) => option[0]}
 					onChange={(e, value) => {setUserSelected(value)}}
+					clearOnBlur
+					value={userSelected}
 					renderInput={(params) => (
 						<TextField
 							{...params}

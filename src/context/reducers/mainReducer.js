@@ -3,6 +3,10 @@ import * as mainActions from '../actions/mainActions';
 const mainInitState = {
   isFriendSearching: null,
   userSelected: null,
+  patalogiasData: null,
+  perrosData: null,
+  personasData: null,
+  isLoading: false,
 };
 
 const mainReducer = ( state = mainInitState, action ) => {
@@ -14,10 +18,34 @@ const mainReducer = ( state = mainInitState, action ) => {
         isFriendSearching: action.value,
       };
 
-      case mainActions.SET_USER_SELECTED:
+    case mainActions.SET_USER_SELECTED:
+      return {
+        ...state,
+        userSelected: action.value,
+      };
+
+    case mainActions.SET_PATOLOGIAS_DATA:
+      return {
+        ...state,
+        patalogiasData:action.value,
+      }
+    
+    case mainActions.SET_PERROS_DATA:
+      return {
+        ...state,
+        perrosData:action.value,
+      }
+
+    case mainActions.SET_PERSONAS_DATA:
+      return {
+        ...state,
+        personasData:action.value,
+      }
+
+      case mainActions.IS_LOADING:
         return {
           ...state,
-          userSelected: action.value,
+          isLoading: action.value,
         }
 
     default:

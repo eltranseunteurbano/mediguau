@@ -12,7 +12,7 @@ const DogCard = () => {
         <Typography className={classes.subttile}>1 año</Typography>
       </Box>
       <Box className={classes.container}>
-        <img src={process.env.PUBLIC_URL + '/perros/bulldog.png'} alt='image' className={classes.img} />
+        <img src={process.env.PUBLIC_URL + '/perros/bulldog.png'} alt='perro' className={classes.img} />
         <Grid container className={classes.grid}>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>
@@ -30,8 +30,12 @@ const useStyles = makeStyles((theme) =>
       width: '100%',
       padding: theme.spacing(2),
       boxSizing: 'border-box',
+      cursor: 'pointer',
 			[theme.breakpoints.up('md')]: {
-			},
+      },
+      '&:hover': {
+        boxShadow: '0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'
+      }
     },
     header: {
       display: 'flex',
