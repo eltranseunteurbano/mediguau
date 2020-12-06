@@ -1,10 +1,15 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core';
-import { Box, Collapse, Avatar, TextField } from '@material-ui/core';
+import { Box, Collapse, Grow, Avatar, TextField, Button } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
+import { Pets, Person } from '@material-ui/icons';
+
+import { useMain } from '../hooks';
 
 const InputAvatarList = ({ open }) => {
 	const classes = useStyles();
+	const { isFriendSearching, userSelected, setUserSelected } = useMain();
+
 
 	return (
 		<Collapse
@@ -16,11 +21,18 @@ const InputAvatarList = ({ open }) => {
 					className={classes.avatar}
 					alt='Avatar'
 					classes={{ colorDefault: classes.avatarBackground }}
-				/>
+				>
+					{isFriendSearching === 0 ?
+						<Pets />
+						:
+						<Person />
+					}
+					</Avatar>
 				<Autocomplete
 					fullWidth
 					options={top100Films}
 					getOptionLabel={(option) => option.title}
+					onChange={(e, value) => {setUserSelected(value)}}
 					renderInput={(params) => (
 						<TextField
 							{...params}
@@ -31,6 +43,10 @@ const InputAvatarList = ({ open }) => {
 					)}
 				/>
 			</Box>
+
+			<Grow in={userSelected !== null}>
+				<Button fullWidth color='primary' variant='contained' className={classes.btn}>Buscar</Button>
+			</Grow>
 		</Collapse>
 	);
 };
@@ -59,6 +75,10 @@ const useStyles = makeStyles((theme) =>
 		avatarBackground: {
 			backgroundColor: theme.palette.secondary.main,
 		},
+		btn: {
+			marginTop: theme.spacing(3),
+			color:' #ffffff'
+		}
 	})
 );
 
