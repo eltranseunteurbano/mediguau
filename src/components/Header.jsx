@@ -65,8 +65,9 @@ const useStyles = makeStyles((theme) =>
 			paddingRight: theme.spacing(1),
 			boxSizing: 'border-box',
 			position: 'sticky',
+			zIndex: 3,
 			top: 0,
-
+			backgroundColor: '#ffffff',
 			[theme.breakpoints.up('md')]: {
 				padding: theme.spacing(2, 4),
 			},

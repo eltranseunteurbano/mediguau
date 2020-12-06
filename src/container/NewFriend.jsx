@@ -3,6 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 
 import SelectInformationComponent from '../components/SelectInformationComponent';
+import CardsGroup from '../components/CardsGroup';
 
 const NewFriend = () => {
 	const classes = useStyles();
@@ -10,6 +11,7 @@ const NewFriend = () => {
 	return (
 		<Box component='section' className={classes.root}>
 			<SelectInformationComponent />
+			<CardsGroup />
 		</Box>
 	);
 };
