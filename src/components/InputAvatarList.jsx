@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Box, Collapse, Grow, Avatar, TextField, Button } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
-import { Pets, Person } from '@material-ui/icons';
+import { Pets, Person, LocalHospital } from '@material-ui/icons';
 
 import { useMain } from '../hooks';
 
@@ -13,6 +13,7 @@ const InputAvatarList = ({ open }) => {
 		userSelected,
 		setUserSelected,
 		personasData,
+		patalogiasData,
 		perrosData,
 		toggleSearch,
 	} = useMain();
@@ -35,7 +36,9 @@ const InputAvatarList = ({ open }) => {
 					className={classes.avatar}
 					alt='Avatar'
 					src={isFriendSearching === 0 ? `${process.env.PUBLIC_URL}/perros/${userSelected[0]}.jpg`: isFriendSearching === 1 ? `${process.env.PUBLIC_URL}/personas/${userSelected[0]}.jpg` : ''}
-				/>
+				>
+					<LocalHospital />
+				</Avatar>
 					: 
 					<Avatar
 					classes={{ colorDefault: classes.avatarBackground }}
@@ -43,13 +46,16 @@ const InputAvatarList = ({ open }) => {
 						{isFriendSearching === 0 ?
 						<Pets />
 						:
+						isFriendSearching === 1 ?
 						<Person />
+						:
+						<LocalHospital />
 					}
 					</Avatar>
 				}
 				<Autocomplete
 					fullWidth
-					options={isFriendSearching === 0 ? perrosData && perrosData.slice(1) : personasData && personasData.slice(1)}
+					options={isFriendSearching === 0 ? perrosData && perrosData.slice(1) : isFriendSearching === 1 ? personasData && personasData.slice(1) : patalogiasData && patalogiasData.slice(1)}
 					getOptionLabel={(option) => option[0]}
 					onChange={(e, value) => {setUserSelected(value); toggleSearch(false)}}
 					clearOnBlur

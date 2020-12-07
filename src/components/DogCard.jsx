@@ -2,9 +2,13 @@ import React from 'react'
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Paper, Typography, Box,Grid } from '@material-ui/core';
 
+import { useMain } from '../hooks';
+
 const DogCard = (props) => {
   const classes = useStyles();
   const { name } = props;
+
+  const { isFriendSearching } = useMain();
 
   return (
     <Paper className={classes.root} elevation={3}>
@@ -13,7 +17,21 @@ const DogCard = (props) => {
         <Typography className={classes.subttile}>{Math.floor(Math.random() * (6 - 1)) + 1} años</Typography>
       </Box>
       <Box className={classes.container}>
-        <img src={`${process.env.PUBLIC_URL}/perros/${name}.jpg`} alt={name} className={classes.img} />
+        <img
+          src={
+            isFriendSearching === 0 ? 
+              process.env.PUBLIC_URL + '/personas/' + name + '.jpg'
+              : 
+              isFriendSearching === 1 ?
+              process.env.PUBLIC_URL + '/perros/' + name + '.jpg'
+              :
+              isFriendSearching === 2 ?
+              process.env.PUBLIC_URL + '/perros/' + name + '.jpg'
+              :
+            ''}
+          alt={name}
+          className={classes.img}
+          />
         <Grid container className={classes.grid}>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>

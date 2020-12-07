@@ -19,7 +19,13 @@ const useMain = () => {
 
   useEffect( () => {
     if(userSelected) {
-      similitudEntrePersonasPerros()
+      if(isFriendSearching === 0) {
+        similitudEntrePerrosPersonas();
+      } else if(isFriendSearching === 1) {
+        similitudEntrePersonasPerros();
+      }  else if(isFriendSearching === 2) {
+        similitudEntrePersonasPerros();
+      }
     }
   }, [userSelected])
   
@@ -72,6 +78,35 @@ const useMain = () => {
     setSimilitudPersonaPerros(arrayPerrosSimilitud)
   }
 
+  const similitudEntrePerrosPersonas = () => {
+    let arrayPerrosSimilitud = []
+
+    let usuario = userSelected.slice(1);
+    let jauria = personasData.slice(1);
+
+    jauria.map( (perro) => { 
+      let dataPerro = {};
+      let puntoABData = [];
+      let perroTemp = perro.slice(1)
+      dataPerro.name = perro[0];
+      
+      for (let i = 0; i < perroTemp.length; i++) {
+        puntoABData.push(perroTemp[i] * usuario[i])
+      }
+
+      dataPerro.AB = puntoABData.reduce((acc, current) => Number.parseInt(acc) + Number.parseInt(current));
+      dataPerro.magnitudA = Math.sqrt(perroTemp.reduce((acc, current) => Number.parseInt(acc) + Math.pow(Number.parseInt(current), 2)))
+      dataPerro.magnitudB = Math.sqrt(usuario.reduce((acc, current) => Number.parseInt(acc) + Math.pow(Number.parseInt(current), 2)))
+      dataPerro.similitud = dataPerro.AB / (dataPerro.magnitudA * dataPerro.magnitudB);
+
+      dataPerro.data = perro;
+
+      arrayPerrosSimilitud.push(dataPerro);
+    })
+    arrayPerrosSimilitud.sort((a, b) => b.similitud - a.similitud)
+    setSimilitudPersonaPerros(arrayPerrosSimilitud)
+  }
+
   return {
     isFriendSearching,
     userSelected,
@@ -80,6 +115,7 @@ const useMain = () => {
     isSearched,
     personasData,
     similitudPersonaPerros,
+    similitudEntrePerrosPersonas,
     toggleTypeData,
     setUserSelected,
     loadDataCSV,

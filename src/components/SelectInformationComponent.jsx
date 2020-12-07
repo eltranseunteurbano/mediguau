@@ -37,6 +37,7 @@ const SelectInformationComponent = () => {
 				>
 					<Tab label='Nuevo dueño' className={classes.tabButton} />
 					<Tab label='Nuevo amigo' className={classes.tabButton} />
+					<Tab label='Enfermedad' className={classes.tabButton} />
 				</Tabs>
 				<InputAvatarList open={isFriendSearching !== null} />
 			</Box>
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) =>
 			marginBottom: `${theme.spacing(4)}px`,
 		},
 		tabButton: {
-			width: '50%',
+			width: 'calc(100% / 3)',
 		},
 	})
 );

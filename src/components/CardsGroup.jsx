@@ -15,11 +15,9 @@ const CardsGroup = () => {
     <Box className={classes.root}>
 
 			{
-				similitudPersonaPerros.slice(0,3).map( (card, i) => {
-					console.log(card)
-					return(
+				similitudPersonaPerros.slice(0,3).map( (card, i) =>( 
 					<DogCard key={i} name={card.name}/>
-				)})
+				))
 			}
     </Box>
   )
