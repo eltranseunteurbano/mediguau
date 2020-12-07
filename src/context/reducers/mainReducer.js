@@ -7,6 +7,7 @@ const mainInitState = {
   perrosData: null,
   personasData: null,
   isLoading: false,
+  isSearched: false,
 };
 
 const mainReducer = ( state = mainInitState, action ) => {
@@ -47,6 +48,12 @@ const mainReducer = ( state = mainInitState, action ) => {
           ...state,
           isLoading: action.value,
         }
+        
+    case mainActions.SET_SEARCH:
+      return {
+        ...state,
+        isSearched: action.value,
+      }
 
     default:
       return state;

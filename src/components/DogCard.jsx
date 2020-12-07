@@ -2,17 +2,18 @@ import React from 'react'
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Paper, Typography, Box,Grid } from '@material-ui/core';
 
-const DogCard = () => {
+const DogCard = (props) => {
   const classes = useStyles();
+  const { name } = props;
 
   return (
     <Paper className={classes.root} elevation={3}>
       <Box className={classes.header}>
-        <Typography className={classes.title}>BullDog Frances</Typography>
-        <Typography className={classes.subttile}>1 año</Typography>
+        <Typography className={classes.title}>{name}</Typography>
+        <Typography className={classes.subttile}>{Math.floor(Math.random() * (6 - 1)) + 1} años</Typography>
       </Box>
       <Box className={classes.container}>
-        <img src={process.env.PUBLIC_URL + '/perros/bulldog.png'} alt='perro' className={classes.img} />
+        <img src={`${process.env.PUBLIC_URL}/perros/${name}.jpg`} alt={name} className={classes.img} />
         <Grid container className={classes.grid}>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>
           <Grid item xs={6} className={classes.gridItem}>a</Grid>
@@ -76,7 +77,8 @@ const useStyles = makeStyles((theme) =>
 			},
     },
     img: {
-      width: '60%',
+      maxWidth: '60%',
+      height: 120,
       marginBottom: theme.spacing(0),
       [theme.breakpoints.up('sm')]: {
         width: '100%',

@@ -2,15 +2,25 @@ import React from 'react'
 import { createStyles, makeStyles } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 
+import { useMain } from '../hooks'
+
 import DogCard from './DogCard';
 
 const CardsGroup = () => {
-  const classes = useStyles();
+	const classes = useStyles();
+	
+	const { similitudPersonaPerros } = useMain();
+
   return (
     <Box className={classes.root}>
-      <DogCard />
-      <DogCard />
-      <DogCard />
+
+			{
+				similitudPersonaPerros.slice(0,3).map( (card, i) => {
+					console.log(card)
+					return(
+					<DogCard key={i} name={card.name}/>
+				)})
+			}
     </Box>
   )
 }

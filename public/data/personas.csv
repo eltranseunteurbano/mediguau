@@ -1,21 +1,21 @@
-Nombre,Alzheimer,Depresión,Obesidad,Bipolaridad,Alucionaciones,Demencia,Autismo ,Ansiedad,Estrés Post Traumático,Transtorno del aprendizaje,Transtorno de alimentación,Ceguera,Sordera,Artritis,Lupus,Diabetes,Asma,EPOC,Síndrome de Down,Síndrome de Tourette
-Camilo Gutierrez,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Sandra Vásquez ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10
-David Pinzón,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Alvaro García,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Ana María López,1,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Maria José Moreno,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1
-Luis Posso,1,10,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Rodrigo Reina,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1
-Fernanda Diaz,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1,1
-Daniel Echeverry,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1
-Camila Moreno ,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1
-Fernanda Aragón,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1
-Yeimy Camacho,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1,1,1
-Luisa Bermudez,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1
-Amanda Salguero,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1
-Gloria Benitez,1,1,1,10,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Eliana Ussa,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1
-Kimberly Santos,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1
-Jorge Wang,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1
-Camila Varela,1,1,1,1,1,1,1,1,1,1,1,1,10,1,1,1,1,1,1,1
+Nombre,Sociabilidad,Economía,Energía,Tempramental,Asustadizo,Peresozo,Calmado,Alegre,Acompañamiento físico,Acompañamiento psicológico ,Autonomía,Cuidados 
+Camilo Gutierrez,4,10,6,8,7,4,2,5,10,2,5,8
+Sandra Vásquez ,5,6,4,5,5,3,3,9,8,3,6,10
+David Pinzón,5,6,4,5,7,4,3,6,7,9,7,5
+Alvaro García,6,6,3,4,8,3,1,5,8,8,8,5
+Ana María López,1,8,3,2,8,10,4,1,10,3,4,9
+Maria José Moreno,6,4,6,2,9,9,8,6,7,4,5,8
+Luis Posso,3,6,3,3,6,10,6,4,8,4,4,7
+Rodrigo Reina,5,7,3,6,2,8,5,6,8,7,4,9
+Fernanda Diaz,8,3,6,5,4,2,3,5,10,10,7,7
+Daniel Echeverry,6,8,6,2,8,8,7,5,8,5,5,10
+Camila Moreno ,7,7,9,6,3,3,4,8,10,8,7,10
+Fernanda Aragón,4,6,5,7,2,5,5,6,8,7,7,7
+Yeimy Camacho,6,7,7,6,7,2,8,8,10,9,6,9
+Luisa Bermudez,8,3,7,5,7,3,7,8,10,3,7,4
+Amanda Salguero,4,4,6,7,8,4,3,4,8,9,9,6
+Gloria Benitez,4,7,5,7,4,5,2,9,5,7,6,4
+Eliana Ussa,5,7,9,6,3,7,3,9,9,8,5,10
+Kimberly Santos,7,6,5,7,8,2,4,7,8,6,7,8
+Jorge Wang,4,10,2,7,7,5,2,5,7,9,6,10
+Camila Varela,5,3,7,5,2,4,7,9,9,4,4,4

@@ -35,8 +35,8 @@ const SelectInformationComponent = () => {
 					className={classes.tabButtonsGroup}
 					onChange={(e, value) => toggleTypeData(value)}
 				>
-					<Tab label='Nuevo amigo' className={classes.tabButton} />
 					<Tab label='Nuevo dueño' className={classes.tabButton} />
+					<Tab label='Nuevo amigo' className={classes.tabButton} />
 				</Tabs>
 				<InputAvatarList open={isFriendSearching !== null} />
 			</Box>

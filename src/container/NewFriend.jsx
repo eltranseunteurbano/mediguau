@@ -10,11 +10,11 @@ import { useMain } from '../hooks';
 const NewFriend = () => {
 	const classes = useStyles();
 	
-	const { userSelected } = useMain();
+	const { isSearched } = useMain();
 	return (
 		<Box component='section' className={classes.root}>
 			<SelectInformationComponent />
-			<Collapse in={userSelected !== null} className={classes.collapseGroup}>
+			<Collapse in={isSearched} className={classes.collapseGroup}>
 				<CardsGroup />
 			</Collapse>
 		</Box>

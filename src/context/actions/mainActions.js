@@ -4,6 +4,7 @@ export const SET_PATOLOGIAS_DATA = 'SET_PATOLOGIAS_DATA';
 export const SET_PERROS_DATA = 'SET_PERROS_DATA';
 export const SET_PERSONAS_DATA = 'SET_PERSONAS_DATA';
 export const IS_LOADING = 'IS_LOADING';
+export const SET_SEARCH = 'SET_SEARCH';
 
 export const toggleTypeData = (dispatch, value) => {
   dispatch({ type: TOGGLE_TYPE_DATA, value })
@@ -34,4 +35,8 @@ export const onLoadData = (dispatch, type, value) => {
 
 export const setIsLoading = (dispatch, value) => {
   dispatch({ type: IS_LOADING, value})
+}
+
+export const setIsSearched = (dispatch, value) => {
+  dispatch({ type: SET_SEARCH, value})
 }
