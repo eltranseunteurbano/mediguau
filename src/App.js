@@ -6,6 +6,7 @@ import { ContextProvider } from './context/ContextProvider';
 import Header from './components/Header';
 import Presentation from './container/Presentation';
 import NewFriend from './container/NewFriend';
+import All from './container/All';
 import Error from './container/Error';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
 				<Switch>
 					<Route exact path='/' component={Presentation} />
 					<Route exact path='/new' component={NewFriend} />
+					<Route exact path='/all' component={All} />
 					<Route component={Error} />
 				</Switch>
 			</ContextProvider>

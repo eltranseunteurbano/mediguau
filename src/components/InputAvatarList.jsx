@@ -63,7 +63,14 @@ const InputAvatarList = ({ open }) => {
 					renderInput={(params) => (
 						<TextField
 							{...params}
-							label='Busca tu nombre'
+							label={
+								isFriendSearching === 0 ? 
+								'Busca una mascota' 
+								: isFriendSearching === 1 ? 
+								'Busca tu nombre' 
+								: isFriendSearching === 2 ? 
+								'Busca una patología' 
+							: ''}
 							variant='outlined'
 							color='primary'
 						/>

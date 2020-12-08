@@ -15,6 +15,8 @@ const useMain = () => {
     personasData,
     isLoading,
     isSearched,
+    perrosInfo,
+    personasInfo,
   } = state.mainReducer;
 
   useEffect( () => {
@@ -107,6 +109,16 @@ const useMain = () => {
     setSimilitudPersonaPerros(arrayPerrosSimilitud)
   }
 
+  const getPersonData = (id) => {
+    let item = personasInfo.find(persona => persona.name === id)
+    return item;
+  }
+
+  const getPerroData = (id) => {
+    let item = perrosInfo.find(persona => persona.name === id)
+    return item;
+  }
+
   return {
     isFriendSearching,
     userSelected,
@@ -122,6 +134,10 @@ const useMain = () => {
     isLoading,
     toggleLoading,
     toggleSearch,
+    perrosInfo,
+    personasInfo,
+    getPersonData,
+    getPerroData,
   }
 }
 

@@ -37,7 +37,7 @@ const SelectInformationComponent = () => {
 				>
 					<Tab label='Nuevo dueño' className={classes.tabButton} />
 					<Tab label='Nuevo amigo' className={classes.tabButton} />
-					<Tab label='Enfermedad' className={classes.tabButton} />
+					<Tab label='Patología' className={classes.tabButton} />
 				</Tabs>
 				<InputAvatarList open={isFriendSearching !== null} />
 			</Box>

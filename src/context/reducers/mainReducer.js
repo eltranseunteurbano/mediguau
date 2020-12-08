@@ -1,4 +1,6 @@
 import * as mainActions from '../actions/mainActions';
+import perrosObject from '../perrosObject';
+import personasObject from '../personasObject';
 
 const mainInitState = {
   isFriendSearching: null,
@@ -8,6 +10,8 @@ const mainInitState = {
   personasData: null,
   isLoading: false,
   isSearched: false,
+  perrosInfo: [...perrosObject],
+  personasInfo: [...personasObject],
 };
 
 const mainReducer = ( state = mainInitState, action ) => {
