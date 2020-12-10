@@ -77,7 +77,7 @@ const useMain = () => {
       arrayPerrosSimilitud.push(dataPerro);
     })
     arrayPerrosSimilitud.sort((a, b) => b.similitud - a.similitud)
-    setSimilitudPersonaPerros(arrayPerrosSimilitud)
+    setSimilitudPersonaPerros(arrayPerrosSimilitud.filter(item => item.similitud >= 0.7))
   }
 
   const similitudEntrePerrosPersonas = () => {

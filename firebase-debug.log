@@ -1,0 +1,54 @@
+[debug] [2020-12-08T23:35:21.104Z] ----------------------------------------------------------------------
+[debug] [2020-12-08T23:35:21.110Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jaime\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-12-08T23:35:21.111Z] CLI Version:   8.14.1
+[debug] [2020-12-08T23:35:21.111Z] Platform:      win32
+[debug] [2020-12-08T23:35:21.111Z] Node Version:  v12.18.3
+[debug] [2020-12-08T23:35:21.117Z] Time:          Tue Dec 08 2020 18:35:21 GMT-0500 (GMT-05:00)
+[debug] [2020-12-08T23:35:21.117Z] ----------------------------------------------------------------------
+[debug] [2020-12-08T23:35:21.117Z] 
+[debug] [2020-12-08T23:35:21.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-08T23:35:21.136Z] > authorizing via signed-in user
+[debug] [2020-12-08T23:35:21.136Z] [iam] checking project mediguau for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-08T23:35:21.139Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-12-08T23:35:21.140Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-08T23:35:21.651Z] <<< HTTP RESPONSE 200 {"date":"Tue, 08 Dec 2020 23:35:20 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-08T23:35:21.663Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/mediguau:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-12-08T23:35:22.109Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 08 Dec 2020 23:35:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=107","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-08T23:35:22.113Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/mediguau  
+ 
+[debug] [2020-12-08T23:35:22.617Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 08 Dec 2020 23:35:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'mediguau'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-12-08T23:35:22.630Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/mediguau/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-12-08T23:35:23.680Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 08 Dec 2020 23:35:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[mediguau]: beginning deploy... 
+[info] i  hosting[mediguau]: found 72 files in build 
+[debug] [2020-12-08T23:35:24.283Z] [hosting] hash cache [YnVpbGQ] stored for 72 files
+[debug] [2020-12-08T23:35:24.283Z] [hosting][hash queue][FINAL] {"max":493,"min":0,"avg":175.45197743092027,"active":0,"complete":72,"success":72,"errored":0,"retried":0,"total":72,"elapsed":520}
+[debug] [2020-12-08T23:35:24.283Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/mediguau/versions/96cc3545f127b97c:populateFiles  
+ <request body omitted>
+[debug] [2020-12-08T23:35:25.274Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 08 Dec 2020 23:35:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-08T23:35:25.317Z] [hosting][populate queue][FINAL] {"max":999,"min":999,"avg":999,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1036}
+[debug] [2020-12-08T23:35:25.318Z] [hosting] uploads queued: 47
+[debug] [2020-12-08T23:36:30.518Z] [uploadQueue] Retrying task 6529c64b81ffc43f707e0902537f323a70c817ad522b55112180d55e5bb700bc
+[debug] [2020-12-08T23:36:37.544Z] [uploadQueue] Retrying task 33afc17565cb63756c7d0cc78ba7ff5378f38fab24cdbf176d4b58ddc0e0d181
+[debug] [2020-12-08T23:36:39.938Z] [uploadQueue] Retrying task 6a3ad236909b6ac47c4e8cdb4edae6138ea42ea95994a5b29a89b8b14ac0e0a5
+[debug] [2020-12-08T23:36:41.236Z] [uploadQueue] Retrying task d556fd5d097848b3cbc41a8a917b67e06ef3d7fa48900c7f53fae8687876921d
+[debug] [2020-12-08T23:36:42.650Z] [uploadQueue] Retrying task 0251ab1332610eb922baab4603021f5d2854bba4ff9ac140937ec411a3d003eb
+[debug] [2020-12-08T23:36:42.693Z] [uploadQueue] Retrying task 6529c64b81ffc43f707e0902537f323a70c817ad522b55112180d55e5bb700bc
+[debug] [2020-12-08T23:37:06.972Z] [uploadQueue] Retrying task db7fbf465053e811854b218863eea68a77bb919bb4dc50fbee15bbf851cd9e0d
+[debug] [2020-12-08T23:37:16.845Z] [uploadQueue] Retrying task 4f409aff8371727c52541c3ca5692de372051c6d5bf2bb0fb92401c6224a20b9
+[debug] [2020-12-08T23:37:23.725Z] [uploadQueue] Retrying task 145d465b4d33175d6ca44d8a8e47a6578669cce28e3949ac2041f20c23408e2a
+[debug] [2020-12-08T23:37:31.131Z] [uploadQueue] Retrying task d88fe6292cb48ade3fc5e45b48a14c15392c212b0b4611d9191349d7c3e45e30
+[debug] [2020-12-08T23:37:34.289Z] [uploadQueue] Retrying task fa66bb83eda1952684d7aa81d11ae04dcfaf4ffd60bcc7fc31ab89dcb96f7709
+[debug] [2020-12-08T23:37:44.391Z] [uploadQueue] Retrying task 6529c64b81ffc43f707e0902537f323a70c817ad522b55112180d55e5bb700bc
+[debug] [2020-12-08T23:37:45.159Z] [uploadQueue] Retrying task 0f206893f763020653936457d5b37ee3ed806b101cc9cc7da537342d46fbe996
+[debug] [2020-12-08T23:37:54.440Z] [uploadQueue] Retrying task 0251ab1332610eb922baab4603021f5d2854bba4ff9ac140937ec411a3d003eb
+[debug] [2020-12-08T23:38:36.744Z] [uploadQueue] Retrying task 128df8518434076d7ef40c2ccac58138629a828babd3f3d902c537f4e9583f89
+[debug] [2020-12-08T23:39:18.278Z] [uploadQueue] Retrying task fa66bb83eda1952684d7aa81d11ae04dcfaf4ffd60bcc7fc31ab89dcb96f7709
+[debug] [2020-12-08T23:39:57.797Z] [uploadQueue] Retrying task 4f409aff8371727c52541c3ca5692de372051c6d5bf2bb0fb92401c6224a20b9
