@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) =>
 		},
 		img: {
 			position: 'absolute',
-			right: '50%',
+			right: 'calc(50% - 50px)',
 			top: 0,
 		},
 	})
