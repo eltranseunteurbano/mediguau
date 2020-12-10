@@ -31,7 +31,7 @@ const NewFriend = () => {
 const useStyles = makeStyles((theme) =>
 	createStyles({
 		root: {
-			minHeight: 'calc(100vh - 80PX	)',
+			minHeight: 'calc(100vh - 400PX	)',
 			display: 'flex',
 			flexDirection: 'column',
 			justifyContent: 'space-around',

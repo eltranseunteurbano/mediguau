@@ -19,6 +19,7 @@ const DogCard = (props) => {
 		isFriendSearching,
 		getPersonData,
 		getPerroData,
+		similitudPersonaPerros,
 	} = useMain();
 	const [item, setItem] = useState({});
 
@@ -28,15 +29,17 @@ const DogCard = (props) => {
 		} else {
 			setItem(getPerroData(name));
 		}
-	}, [userSelected, isFriendSearching]);
+	}, [userSelected, isFriendSearching, similitudPersonaPerros]);
 
 	return (
 		<Paper className={classes.root} elevation={3}>
 			<Box className={classes.header}>
 				<Typography className={classes.title}>{item && item.name}</Typography>
-				<Typography className={classes.subttile}>
-					{Math.floor(Math.random() * (6 - 1)) + 1} años
-				</Typography>
+				{isFriendSearching > 0 && (
+					<Typography className={classes.subttile}>
+						{Math.floor(Math.random() * (6 - 1)) + 1} años
+					</Typography>
+				)}
 			</Box>
 			<Box className={classes.container}>
 				<img
@@ -59,7 +62,10 @@ const DogCard = (props) => {
 						className={classes.gridItem}
 						style={{ marginBottom: 24 }}
 					>
-						<Box className={classes.gridItemContent}>
+						<Box
+							className={classes.gridItemContent}
+							style={{ backgroundColor: '#fff' }}
+						>
 							{item && item.animo ? (
 								isFriendSearching === 0 ? (
 									<img
@@ -116,29 +122,43 @@ const DogCard = (props) => {
 						<Typography className={classes.titleCards}>Paseo</Typography>
 					</Grid>
 					<Grid item xs={6} className={classes.gridItem}>
-						<Box position='relative' display='inline-flex'>
-							<CircularProgress
-								variant='determinate'
-								value={Math.round(similitud * 100)}
-							/>
+						<Box
+							display='flex'
+							flexDirection='column'
+							justifyContent='space-between'
+							alignItems='center'
+							style={{ height: '100%' }}
+						>
 							<Box
-								top={0}
-								left={0}
-								bottom={0}
-								right={0}
-								position='absolute'
-								display='flex'
-								alignItems='center'
+								position='relative'
+								display='inline-flex'
 								justifyContent='center'
+								alignItems='center'
+								style={{ height: '50px' }}
 							>
-								<Typography
-									variant='caption'
-									component='div'
-									className={classes.progress}
-								>{`${Math.round(similitud * 100)}%`}</Typography>
+								<CircularProgress
+									variant='determinate'
+									value={Math.round(similitud * 100)}
+								/>
+								<Box
+									top={0}
+									left={0}
+									bottom={0}
+									right={0}
+									position='absolute'
+									display='flex'
+									alignItems='center'
+									justifyContent='center'
+								>
+									<Typography
+										variant='caption'
+										component='div'
+										className={classes.progress}
+									>{`${Math.round(similitud * 100)}%`}</Typography>
+								</Box>
 							</Box>
+							<Typography className={classes.titleCards}>Afinidad</Typography>
 						</Box>
-						<Typography className={classes.titleCards}>Afinidad</Typography>
 					</Grid>
 				</Grid>
 			</Box>
@@ -196,7 +216,7 @@ const useStyles = makeStyles((theme) =>
 		},
 		progress: {
 			color: '#384D61',
-			fontSize: '1rem',
+			fontSize: '0.8rem',
 			whiteSpace: 'nowrap',
 			overflow: 'hidden',
 			textOverflow: 'ellipsis',

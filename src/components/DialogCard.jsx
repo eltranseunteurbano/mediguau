@@ -64,7 +64,12 @@ const DialogCard = ({ data, open, close }) => {
 					className={classes.img}
 				/>
 				{isFriendSearching === 0 ? (
-					<Box></Box>
+					<Box>
+						<h1 className={classes.title}>{item.name}</h1>
+						<Divider style={{ marginBottom: '36px' }} />
+						<h2 className={classes.subtitle}> Descripción</h2>
+						<p className={classes.text}>{item.description}</p>
+					</Box>
 				) : (
 					<Box display='flex' flexDirection='column'>
 						<h1 className={classes.title}>{item.name}</h1>

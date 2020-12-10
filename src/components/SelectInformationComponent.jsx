@@ -9,10 +9,13 @@ import { useMain } from '../hooks';
 const SelectInformationComponent = () => {
 	const classes = useStyles();
 
-	const { isFriendSearching, toggleTypeData } = useMain();
+	const { isFriendSearching, toggleTypeData, isSearched } = useMain();
 
 	return (
-		<Box component='main' className={classes.root}>
+		<Box
+			component='main'
+			className={isSearched ? classes.root : classes.rootDos}
+		>
 			<img
 				src={process.env.PUBLIC_URL + './img/runDog.svg'}
 				alt='El firulais'
@@ -57,7 +60,20 @@ const useStyles = makeStyles((theme) =>
 			width: '100%',
 			[theme.breakpoints.up('md')]: {
 				flexDirection: 'row-reverse',
-				minHeight: 'calc(100vh - 80px - 200px)',
+				minHeight: 'calc(100vh - 80px - 450px)',
+			},
+		},
+		rootDos: {
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'space-evenly',
+			alignItems: 'center',
+			minHeight: 'calc(100vh - 80px - 80px)',
+			overflow: 'hidden',
+			width: '100%',
+			[theme.breakpoints.up('md')]: {
+				flexDirection: 'row-reverse',
+				minHeight: 'calc(100vh - 80px - 50px)',
 			},
 		},
 		img: {

@@ -39,7 +39,6 @@ const CardsGroup = ({ currentCard }) => {
 				<Button
 					color='secondary'
 					variant='contained'
-					fullWidth
 					onClick={() => history.push('/')}
 				>
 					Inscríbete para ver más
@@ -48,7 +47,6 @@ const CardsGroup = ({ currentCard }) => {
 				<Button
 					color='secondary'
 					variant='contained'
-					fullWidth
 					onClick={() => history.push('/all')}
 				>
 					Ver todos
