@@ -10,3 +10,23 @@
 .MuiAutocomplete-popper {
   transition: all 0s !important;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(224, 224, 224), 216, 216); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(216, 216, 216); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(170, 170, 170); 
+}

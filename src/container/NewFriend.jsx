@@ -4,19 +4,26 @@ import { Box, Collapse } from '@material-ui/core';
 
 import SelectInformationComponent from '../components/SelectInformationComponent';
 import CardsGroup from '../components/CardsGroup';
+import DialogCard from '../components/DialogCard';
 
 import { useMain } from '../hooks';
 
 const NewFriend = () => {
 	const classes = useStyles();
-	
+	const [currentCard, setCurrentCard] = React.useState();
+
 	const { isSearched } = useMain();
 	return (
 		<Box component='section' className={classes.root}>
 			<SelectInformationComponent />
 			<Collapse in={isSearched} className={classes.collapseGroup}>
-				<CardsGroup />
+				<CardsGroup currentCard={setCurrentCard} />
 			</Collapse>
+			<DialogCard
+				data={currentCard}
+				open={currentCard}
+				close={() => setCurrentCard(null)}
+			/>
 		</Box>
 	);
 };
@@ -37,9 +44,9 @@ const useStyles = makeStyles((theme) =>
 		collapseGroup: {
 			width: '100%',
 			[theme.breakpoints.up('md')]: {
-				width: '80%'
+				width: '80%',
 			},
-		}
+		},
 	})
 );
 

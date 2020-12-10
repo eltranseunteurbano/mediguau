@@ -28,9 +28,7 @@ const DogCard = (props) => {
 		} else {
 			setItem(getPerroData(name));
 		}
-	}, [userSelected]);
-
-	console.log(item);
+	}, [userSelected, isFriendSearching]);
 
 	return (
 		<Paper className={classes.root} elevation={3}>
