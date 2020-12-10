@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) =>
 				flexDirection: 'row-reverse',
 				minHeight: 'calc(100vh - 80px - 450px)',
 			},
+			[theme.breakpoints.up('xl')]: {
+				minHeight: 'calc(100vh - 80px - 550px)',
+			},
 		},
 		rootDos: {
 			display: 'flex',

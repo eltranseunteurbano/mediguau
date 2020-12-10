@@ -4,30 +4,30 @@ import { Hidden, IconButton, Typography } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
-import { readRemoteFile } from 'react-papaparse'
+import { readRemoteFile } from 'react-papaparse';
 import { useMain } from '../hooks';
 
 const Header = () => {
 	const classes = useStyles();
 	const { loadDataCSV } = useMain();
 
-	useEffect( () => {
+	useEffect(() => {
 		readRemoteFile(process.env.PUBLIC_URL + '/data/patalogias.csv', {
 			complete: (results, file) => {
-				loadDataCSV('patologias', results.data)
-			}
-		})
+				loadDataCSV('patologias', results.data);
+			},
+		});
 		readRemoteFile(process.env.PUBLIC_URL + '/data/perros.csv', {
 			complete: (results, file) => {
-				loadDataCSV('perros', results.data)
-			}
-		})
+				loadDataCSV('perros', results.data);
+			},
+		});
 		readRemoteFile(process.env.PUBLIC_URL + '/data/personas.csv', {
 			complete: (results, file) => {
-				loadDataCSV('personas', results.data)
-			}
-		})
-	}, [])
+				loadDataCSV('personas', results.data);
+			},
+		});
+	}, []);
 
 	return (
 		<header className={classes.root}>
@@ -38,6 +38,11 @@ const Header = () => {
 					alt='logo'
 				/>
 			</Link>
+			<img
+				src={process.env.PUBLIC_URL + '/img/hueso.svg'}
+				alt='hueso'
+				className={classes.img}
+			/>
 			<nav className={classes.nav}>
 				<Hidden mdUp>
 					<IconButton color='primary'>
@@ -116,6 +121,11 @@ const useStyles = makeStyles((theme) =>
 				letterSpacing: theme.spacing(0.1),
 				color: theme.palette.primary.main,
 			},
+		},
+		img: {
+			position: 'absolute',
+			right: '50%',
+			top: 0,
 		},
 	})
 );

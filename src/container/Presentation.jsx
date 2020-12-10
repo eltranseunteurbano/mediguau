@@ -14,6 +14,16 @@ const Presentation = () => {
 				alt='Imagen de inicio'
 			/>
 			<Box className={classes.data}>
+				<img
+					src={process.env.PUBLIC_URL + '/img/mariposa 1.svg'}
+					alt='Mariposa 1'
+					className={`${classes.mauno} mariposa1`}
+				/>
+				<img
+					src={process.env.PUBLIC_URL + '/img/mariposa 2.svg'}
+					alt='Mariposa 2'
+					className={`${classes.mados} mariposa2`}
+				/>
 				<Typography
 					className={classes.title}
 					component='h1'
@@ -71,6 +81,8 @@ const useStyles = makeStyles((theme) =>
 			justifyContent: 'center',
 			alignItems: 'center',
 			fontSize: '2.5rem',
+			position: 'relative',
+
 			[theme.breakpoints.up('md')]: {
 				alignItems: 'flex-start',
 			},
@@ -99,6 +111,16 @@ const useStyles = makeStyles((theme) =>
 		btn: {
 			textTransform: 'none',
 			color: theme.palette.common.white,
+		},
+		mauno: {
+			position: 'absolute',
+			top: -70,
+			right: 0,
+		},
+		mados: {
+			position: 'absolute',
+			top: 55,
+			right: 30,
 		},
 	})
 );

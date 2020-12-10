@@ -30,3 +30,51 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(170, 170, 170); 
 }
+
+.mariposa1 {
+  animation-name: mauno;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.mariposa2 {
+  animation-name: mados;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes mauno {
+  0% {
+    top: -70px;
+    right: 0px;
+  }
+
+  40% {
+    top: -65px;
+    right: 10px;
+  }
+
+  70% {
+    top: -62px;
+    right: 6px;
+  }
+}
+
+@keyframes mados {
+  0% {
+    top: 55px;
+    right: 30px;
+  }
+
+  40% {
+    top: 60px;
+    right: 22px;
+  }
+
+  70% {
+    top: 52px;
+    right: 35px;
+  }
+}
